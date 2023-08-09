@@ -1,0 +1,12 @@
+.wrapper {
+	margin-inline-start: var(--space-m-l);
+	margin-inline-end: var(--space-m-l);
+	max-width: var(--wrapper-max);
+}
+
+@media (--from-large-viewport) {
+	.wrapper {
+		margin-inline-start: auto;
+		margin-inline-end: auto;
+	}
+}

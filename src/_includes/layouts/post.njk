@@ -1,0 +1,18 @@
+{% extends "layouts/base.njk" %} 
+
+{% block content %}
+  <article class="wrapper layout-grid">
+    <h1 class="page-header layout-span">{{ title }}</h1>
+    <div class="layout-span | content-main flow">
+      {% if tags %}
+        <h2>Tags</h2>
+        <ul>
+          {% for item in tags %}
+            <li><a href="/tag/{{ item | slug }}/">{{ item }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {{ content | safe }}
+    </div>
+  </article>
+{% endblock %}

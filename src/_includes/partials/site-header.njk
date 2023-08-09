@@ -1,0 +1,24 @@
+{# Skip to main content https://design-system.service.gov.uk/components/skip-link/ #}
+{# We'll render home "/" manually to avoid any navigation headaches for rendering active class #}
+{# We loop through eleventyNavigation and check if item.url e.g. /posts/ is in page.url and set active class. Stuck with this method for the moment until a relationship between Eleventy Navigation and Eleventy Pagination is figured out #}
+{# Recommend using aria-current="page" instead of active class if your project is surfacing all navigation items #}
+
+<a class="skip-link visually-hidden" href="#main-content">Skip to main content</a>
+<header>
+	<nav class="main-nav">
+		<div class="wrapper layout-grid">
+			<ul class="layout-span">
+				<li><a href="/" {% if page.url == "/" %}class="main-nav-item--active"{% endif %}>Home</a></li>
+				{% for item in collections.all | eleventyNavigation %}
+					<li>
+						<a href="{{ item.url }}" 
+							{% if item.url in page.url %} 
+								class="main-nav-item--active"
+							{% endif %}
+						>{{ item.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</nav>
+</header>

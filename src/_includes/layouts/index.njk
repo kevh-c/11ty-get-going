@@ -1,0 +1,23 @@
+{% extends "layouts/base.njk" %} 
+
+{% set title = meta.projectName %}
+
+{% block content %}
+  <section class="wrapper layout-grid">
+    <h1 class="page-header layout-span">{{ title }}</h1>
+    <div class="layout-span layout-span--main | content-main flow">
+      {{ content | safe }}
+    </div>
+    <div class="layout-span layout-span--aside">
+      <aside class="content-aside flow">
+        <h2>Some curated example posts</h2>
+        <p>This example is generated from a collection which looks for frontmatter with <code>curated: true</code> on any rendered page or post.</p>
+        <ul>
+          {% for item in collections.curated %}
+            {% include "partials/site-post-list.njk" %}
+          {% endfor %}
+        </ul>
+      </aside>
+    </div>
+  </section>
+{% endblock %}

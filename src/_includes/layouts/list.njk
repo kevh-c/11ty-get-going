@@ -1,0 +1,20 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <section class="wrapper layout-grid">
+    <h1 class="page-header layout-span">{{ title }}</h1>
+    <div class="layout-span | content-main flow">
+      <ul>
+        {% for item in pagination.items %}
+          {% include "partials/site-post-list.njk" %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% if pagination.href.next or pagination.href.previous %}
+      <div class="layout-span">
+        {% include "partials/site-pagination.njk" %}
+      </div>
+    {% endif %}
+    </div>
+  </section>
+{% endblock %}

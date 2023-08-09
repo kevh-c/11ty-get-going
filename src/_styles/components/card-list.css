@@ -1,0 +1,26 @@
+.card-list ul {
+	display: grid;
+	grid-template-columns: auto;
+	column-gap: var(--space-xs-s);
+	@extend %list-reset;
+}
+
+.card-list ul li {
+	margin-block-start: 0;
+	padding: var(--space-xs-s) 0;
+	border-bottom: 2px solid var(--color-border-default);
+}
+
+.card-list ul li:first-of-type {
+	border-top: 2px solid var(--color-border-default);
+}
+
+@media (--from-medium-viewport) {
+	.card-list ul {
+		grid-template-columns: auto auto;
+		column-gap: var(--space-m-l);
+	}
+	.card-list ul li:nth-child(2) {
+		border-top: 2px solid var(--color-border-default);
+	}
+}

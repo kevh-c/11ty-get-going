@@ -1,0 +1,19 @@
+.layout-grid {
+	display: grid;
+	grid-template-columns: [main-start] 5fr [main-end] var(--space-s-m) [aside-start] 2fr [aside-end];
+	column-gap: var(--space-s-m);
+}
+
+.layout-span {
+	grid-column: main-start / aside-end;
+}
+
+@media (--from-large-viewport) {
+	.layout-span--main {
+		grid-column: main-start / main-end;
+	}
+
+	.layout-span--aside {
+		grid-column: aside-start / aside-end;
+	}
+}

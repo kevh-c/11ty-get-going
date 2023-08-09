@@ -1,0 +1,14 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <section class="wrapper layout-grid">
+    <h1 class="page-header layout-span">Tagged “{{ tag }}”</h1>
+    <div class="layout-span | content-main flow">
+      <ul>
+        {% for item in collections[tag] | reverse %}
+          {% include "partials/site-post-list.njk" %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

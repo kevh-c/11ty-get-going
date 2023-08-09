@@ -1,0 +1,90 @@
+:root {
+	/* Colour */
+	--color-surface-default: hsl(33, 15%, 88%);
+	--color-surface-secondary: hsl(33, 13%, 94%);
+	--color-highlight: hsl(216, 100%, 88%);
+	--color-text-default: hsl(105, 4%, 22%);
+	--color-text-code-default: hsl(105, 10%, 42%);
+	--color-text-code-attr: hsl(358, 85%, 38%);
+	--color-text-code-function: hsl(24, 85%, 31%);
+	--color-text-code-class: hsl(39, 92%, 35%);
+	--color-text-code-selector: hsl(299, 54%, 40%);
+	--color-text-code-variable: hsl(143, 59%, 34%);
+	--color-text-code-url: hsl(179, 50%, 30%);
+	--color-interactive-default: hsl(216, 100%, 56%);
+	--color-interactive-hover: hsl(216, 100%, 26%);
+	--color-interactive-focus: hsl(216, 100%, 26%);
+	--color-interactive-focus-ring: hsl(216, 100%, 76%);
+	--color-border-default: hsl(83, 4%, 68%);
+
+	/* Font */
+	--font-family-sans: system-ui, -apple-system, sans-serif;
+	--font-family-code: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+		"DejaVu Sans Mono", monospace;
+
+	/* Fluid type and space, thanks to https://utopia.fyi/ */
+	/* Font size */
+	--step-0: clamp(1rem, calc(1rem + 0.12vw), 1.15rem);
+	--step-1: clamp(1.2rem, calc(1.16rem + 0.19vw), 1.33rem);
+	--step-2: clamp(1.44rem, calc(1.34rem + 0.48vw), 1.78rem);
+	--step-3: clamp(1.73rem, calc(1.55rem + 0.92vw), 2.37rem);
+	--step-4: clamp(2.07rem, calc(1.76rem + 1.55vw), 3.16rem);
+	--step-5: clamp(2.49rem, calc(2rem + 2.46vw), 4.21rem);
+
+	/* Leading */
+	--leading-tight: 1.1;
+	--leading-default: 1.4;
+	--leading-loose: 1.6;
+
+	/* Measure */
+	--measure-default: 70ch;
+	--measure-tight: 48ch;
+
+	/* Spacing */
+	--space-3xs: clamp(0.25rem, calc(0.25rem + 0vw), 0.25rem);
+	--space-2xs: clamp(0.5rem, calc(0.5rem + 0vw), 0.5rem);
+	--space-xs: clamp(0.75rem, calc(0.75rem + 0vw), 0.75rem);
+	--space-s: clamp(1rem, calc(1rem + 0vw), 1rem);
+	--space-m: clamp(1.5rem, calc(1.5rem + 0vw), 1.5rem);
+	--space-l: clamp(2rem, calc(2rem + 0vw), 2rem);
+	--space-xl: clamp(3rem, calc(3rem + 0vw), 3rem);
+	--space-2xl: clamp(4rem, calc(4rem + 0vw), 4rem);
+	--space-3xl: clamp(6rem, calc(6rem + 0vw), 6rem);
+	/* One-up pairs */
+	--space-3xs-2xs: clamp(0.25rem, calc(0.18rem + 0.36vw), 0.5rem);
+	--space-2xs-xs: clamp(0.5rem, calc(0.43rem + 0.36vw), 0.75rem);
+	--space-xs-s: clamp(0.75rem, calc(0.68rem + 0.36vw), 1rem);
+	--space-s-m: clamp(1rem, calc(0.86rem + 0.71vw), 1.5rem);
+	--space-m-l: clamp(1.5rem, calc(1.36rem + 0.71vw), 2rem);
+	--space-l-xl: clamp(2rem, calc(1.71rem + 1.43vw), 3rem);
+	--space-xl-2xl: clamp(3rem, calc(2.71rem + 1.43vw), 4rem);
+	--space-2xl-3xl: clamp(4rem, calc(3.43rem + 2.86vw), 6rem);
+	/* Custom pairs */
+	--space-s-l: clamp(1rem, calc(0.71rem + 1.43vw), 2rem);
+
+	/* Border radius */
+	--border-radius-small: 1rem;
+
+	/* Max width */
+	--wrapper-max: 64rem;
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-surface-default: hsl(105, 4%, 8%);
+		--color-surface-secondary: hsl(105, 4%, 4%);
+		--color-highlight: hsl(216, 100%, 18%);
+		--color-text-default: hsl(33, 15%, 88%);
+		--color-text-code-default: hsl(33, 15%, 68%);
+		--color-text-code-attr: hsl(358, 65%, 68%);
+		--color-text-code-function: hsl(24, 85%, 61%);
+		--color-text-code-class: hsl(41, 92%, 65%);
+		--color-text-code-selector: hsl(299, 34%, 70%);
+		--color-text-code-variable: hsl(143, 39%, 64%);
+		--color-text-code-url: hsl(179, 50%, 60%);
+		--color-interactive-hover: hsl(216, 100%, 86%);
+		--color-interactive-focus: hsl(216, 100%, 86%);
+		--color-border-default: hsl(83, 4%, 28%);
+	}
+}

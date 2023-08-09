@@ -1,0 +1,10 @@
+{% extends "layouts/base.njk" %} 
+
+{% block content %}
+  <div class="wrapper layout-grid">
+    <div class="layout-span | content-main flow">
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </div>
+{% endblock %}

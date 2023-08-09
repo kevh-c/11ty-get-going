@@ -1,0 +1,19 @@
+/* Smallest viewport: 320px */
+@custom-media --upto-smallest-viewport (max-width: 20em);
+@custom-media --from-smallest-viewport (min-width: 20em);
+
+/* Small viewport: 480px */
+@custom-media --upto-small-viewport (max-width: 30em);
+@custom-media --from-small-viewport (min-width: 30em);
+
+/* Medium viewport: 768px */
+@custom-media --upto-medium-viewport (max-width: 48em);
+@custom-media --from-medium-viewport (min-width: 48em);
+
+/* Large viewport: 1100px */
+@custom-media --upto-large-viewport (max-width: 68.75em);
+@custom-media --from-large-viewport (min-width: 68.75em);
+
+/* Largest viewport: 1480px */
+@custom-media --upto-largest-viewport (max-width: 92.5em);
+@custom-media --from-largest-viewport (min-width: 92.5em);

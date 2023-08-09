@@ -1,0 +1,51 @@
+/* Headings */
+
+%heading-1 {
+	font-family: var(--font-family-sans);
+	font-weight: 900;
+	color: var(--color-text-default);
+	font-size: var(--step-4);
+	line-height: var(--leading-tight);
+}
+
+%heading-2 {
+	font-family: var(--font-family-sans);
+	font-weight: 800;
+	color: var(--color-text-default);
+	font-size: var(--step-2);
+	line-height: var(--leading-tight);
+}
+
+%heading-3 {
+	font-family: var(--font-family-sans);
+	font-weight: 600;
+	color: var(--color-text-default);
+	font-size: var(--step-1);
+	line-height: var(--leading-default);
+}
+
+%heading-small {
+	font-family: var(--font-family-sans);
+	font-weight: 600;
+	color: var(--color-text-default);
+	font-size: var(--step-1);
+	line-height: var(--leading-default);
+}
+
+/* Content */
+
+%body {
+	font-family: var(--font-family-sans);
+	font-weight: 400;
+	color: var(--color-text-default);
+	font-size: var(--step-0);
+	line-height: var(--leading-default);
+}
+
+/* List reset */
+
+%list-reset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

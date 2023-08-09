@@ -1,0 +1,8 @@
+/* Elements: img, iframe, embed, object, param, video, audio, source, track, canvas, map, area */
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}

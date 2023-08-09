@@ -1,0 +1,36 @@
+/* Elements: body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address */
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background: var(--color-surface-default);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup {
+	max-width: var(--measure-tight);
+	margin: 0;
+}
+
+h1 {
+	@extend %heading-1;
+}
+
+h2 {
+	@extend %heading-2;
+}
+
+h3 {
+	@extend %heading-3;
+}
+
+h4,
+h5,
+h6 {
+	@extend %heading-small;
+}

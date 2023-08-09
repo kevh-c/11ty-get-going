@@ -1,0 +1,32 @@
+.skip-link {
+	font-family: var(--font-family-sans);
+	font-weight: 500;
+	display: block;
+	width: 100%;
+	padding: var(--space-xs);
+	background-color: var(--color-surface-secondary);
+}
+
+.main-nav {
+	padding: var(--space-s-m) 0;
+	margin-block-end: var(--space-xl-2xl);
+}
+
+.main-nav ul {
+	@extend %list-reset;
+}
+
+.main-nav-item--active {
+	color: var(--color-text-default);
+	text-decoration: none;
+}
+
+@media (--from-medium-viewport) {
+	.main-nav ul {
+		display: flex;
+	}
+
+	.main-nav ul li {
+		margin-inline-end: var(--space-xs-s);
+	}
+}

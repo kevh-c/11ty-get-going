@@ -1,0 +1,7 @@
+.footnotes {
+	margin-block-start: var(--space-l-xl);
+}
+
+.footnotes a {
+	word-wrap: break-word;
+}

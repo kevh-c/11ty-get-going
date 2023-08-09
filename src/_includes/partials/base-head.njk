@@ -1,0 +1,59 @@
+{# - Head order thanks to https://github.com/rviscomi/capo.js #}
+
+{# Page title format #}
+{% set pageTitle = title + ': ' + meta.projectName %}
+{# Remove any title duplication #}
+{% if title === meta.projectName %} {% set pageTitle = title %} {% endif %}
+
+{# URL formats #}
+{% set thisUrl = meta.domain + page.url %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>{{ pageTitle }}</title>
+
+<link rel="stylesheet" href="/styles/site.css" media="all">
+
+{# ------------ Prefetches? Place here ------------ #}
+
+<meta name="description" content="{{ meta.description }}">
+<meta property="og:description" content="{{ meta.description }}">
+
+<link rel="canonical" href="{{ thisUrl }}">
+
+{% if meta.og %}
+  <meta property="og:url" content="{{ thisUrl }}">
+  <meta property="og:site_name" content="{{ meta.projectName }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  {% if meta.og.locale %}
+    <meta property="og:locale" content="{{ meta.og.locale }}">
+  {% endif %}
+  {% if meta.og.type %}
+    <meta property="og:type" content="{{ meta.og.type }}">
+  {% endif %}
+  {% if meta.og.image %}
+    <meta property="og:image" content="{{ meta.og.image.rel }}">
+    <meta property="og:image:alt" content="{{ meta.og.image.alt }}">
+  {% endif %}
+{% endif %}
+
+<meta name="generator" content="{{ eleventy.generator }}">
+
+<meta name="robots" content="{{ meta.robots }}">
+
+<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ meta.projectName }}">
+
+{# Identity loop #}
+{% if meta.identity %}
+  {% for item in meta.identity %}
+    <link rel="{{ item.rel }}" href="{{ item.url }}">
+  {% endfor %}
+{% endif %}
+
+{# - Minimal favicons thanks to https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs #}
+
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">

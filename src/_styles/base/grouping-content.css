@@ -1,0 +1,58 @@
+/* Elements: p, hr, br, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div */
+
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+pre,
+hr {
+	margin: 0;
+}
+
+ul,
+ol {
+	list-style-position: outside;
+}
+
+ul {
+	margin-inline-start: -1.5em;
+}
+
+ol {
+	margin-inline-start: -0.5em;
+}
+
+p,
+li {
+	@extend %body;
+}
+
+li {
+	margin-block-start: 0.5em;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid var(--color-border-default);
+}
+
+figcaption {
+	@extend %body;
+	padding: var(--space-xs-s) 0;
+	max-width: var(--measure-default);
+}
+
+p,
+li {
+	max-width: var(--measure-default);
+}
+
+hr {
+	border: none;
+	background-color: var(--color-border-default);
+	height: 1px;
+}

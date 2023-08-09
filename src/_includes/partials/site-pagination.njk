@@ -1,0 +1,18 @@
+{# Uses Nunjucks special variable loop.index0 to target the current iteration of a loop #}
+
+<nav class="site-pagination" aria-labelledby="pagination">
+  <ul>
+    <li><a href="{{ pagination.href.first }}">First</a></li>
+    {%- for pageEntry in pagination.pages %}
+        <li>
+          <a href="{{ pagination.hrefs[ loop.index0 ] }}"
+            {% if page.url == pagination.hrefs[ loop.index0 ] %} 
+              aria-current="page" 
+            {% endif %}>
+            {{ loop.index }}
+          </a>
+        </li>
+    {%- endfor %}
+    <li><a href="{{ pagination.href.last }}">Last</a></li>
+  </ul>
+</nav>

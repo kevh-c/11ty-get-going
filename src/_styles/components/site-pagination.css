@@ -1,0 +1,17 @@
+.site-pagination {
+	margin-block-start: var(--space-m-l);
+}
+
+.site-pagination ul {
+	@extend %list-reset;
+	display: flex;
+}
+
+.site-pagination ul li {
+	margin-inline-end: var(--space-xs-s);
+}
+
+.site-pagination a[aria-current="page"] {
+	color: var(--color-text-default);
+	text-decoration: none;
+}

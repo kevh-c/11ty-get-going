@@ -1,0 +1,6 @@
+/* Elements: table, caption, colgroup, col, tbody, thead, tfoot, tr, td, th */
+
+table,
+fieldset {
+	margin: 0;
+}

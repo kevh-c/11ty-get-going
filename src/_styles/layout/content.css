@@ -1,0 +1,33 @@
+.content-main {
+	--flow-space: var(--space-2xs-xs);
+	margin-block-start: var(--space-s-m);
+}
+
+.content-main
+	:is(
+		* + h2,
+		* + figure,
+		* + .card-list,
+		* + pre[class*="language-"],
+		pre[class*="language-"] + *,
+		* + hr,
+		hr + *
+	) {
+	--flow-space: var(--space-l-xl);
+}
+
+.content-main :is(* + h3) {
+	--flow-space: var(--space-m-l);
+}
+
+.content-main :is(* + h4) {
+	--flow-space: var(--space-s-m);
+}
+
+.content-aside {
+	--flow-space: var(--space-xs-s);
+	margin-block-start: var(--space-l);
+	padding: var(--space-l);
+	border-radius: var(--border-radius-small);
+	background-color: var(--color-surface-secondary);
+}
