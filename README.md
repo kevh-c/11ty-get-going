@@ -28,6 +28,8 @@ The following starting points and integrations come included:
 ### Running the project
 To run a version yourself, [clone the repo](https://github.com/kevh-c/11ty-get-going), `npm install`  and then `npm run serve` to view the demo project locally.
 
+If you're intending to use Git LFS remember to `git lfs install` to enable it.
+
 ---
 
 ## Getting started
