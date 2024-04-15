@@ -13,7 +13,7 @@ There's a little bit of housekeeping to do in order to make this template your o
 ## Update template metadata
 Eleventy uses [global data files](https://www.11ty.dev/docs/data-global/) to conveniently expose data to every template in an Eleventy project. In this template global data files can be found under `src/_11ty/data`. 
 
-This template uses `meta.js` to pull in useful default global values. These of course can be overridden in your content frontmatter thanks to Eleventys [data cascade](https://www.11ty.dev/docs/data-cascade/).
+This template uses `config.js` to pull in useful default global values. These of course can be overridden in your content frontmatter thanks to Eleventys [data cascade](https://www.11ty.dev/docs/data-cascade/).
 
 ```js
 // Required. The name of your project.

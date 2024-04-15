@@ -6,9 +6,6 @@ tags:
   - "tv series"
 figureTest:
   caption: "This is a caption for the figure"
-  imageSrc: "./src/media/jeremy-thomas-E0AHdsENmDg-unsplash.jpg"
-  imageTitle: "Space by Jeremy Thomas"
-  imageAlt: "The depths of space showing an immense variety of colour across millions of stars."
 ---
 
 ## Setting
@@ -21,8 +18,6 @@ James Holden and his crew know the strengths and weaknesses of this new force be
 
 But the new alliances are as flawed as the old, and the struggle for power has only just begun. As the chaos grows, an alien mystery deepens. Pirate fleets, mutiny and betrayal may be the least of the Rocinante's problems. And in the uncanny spaces past the ring gates, the choices of a few damaged and desperate people may determine the fate of more than just humanity.[^1]
 
-{% figure figureTest.caption %}
-  {% picture figureTest.imageSrc, figureTest.imageTitle, figureTest.imageAlt %}
-{% endfigure %}
+![The depths of space showing an immense variety of colour across millions of stars.](./src/media/jeremy-thomas-E0AHdsENmDg-unsplash.jpg "Space by Jeremy Thomas")
 
 [^1]: Source: https://www.goodreads.com/book/show/25877663-babylon-s-ashes

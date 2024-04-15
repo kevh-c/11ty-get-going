@@ -4,9 +4,6 @@ tags:
   - "book"
 figureTest:
   caption: "This is a caption for the figure"
-  imageSrc: "./src/media/john-fowler-7Ym9rpYtSdA-unsplash.jpg"
-  imageTitle: "John Fowler"
-  imageAlt: "The depths of space showing an immense variety of colour across millions of stars."
 ---
 
 ## Setting
@@ -17,8 +14,6 @@ In the vast space between Earth and Jupiter, the inner planets and belt have for
 
 New technologies clash with old as the history of human conflict returns to its ancient patterns of war and subjugation. But human nature is not the only enemy, and the forces being unleashed have their own price. A price that will change the shape of humanity -- and of the Rocinante -- unexpectedly and forever ...[^1]
 
-{% figure figureTest.caption %}
-  {% picture figureTest.imageSrc, figureTest.imageTitle, figureTest.imageAlt %}
-{% endfigure %}
+![The depths of space showing an immense variety of colour across millions of stars.](./src/media/john-fowler-7Ym9rpYtSdA-unsplash.jpg "John Fowler")
 
 [^1]: Source: https://www.goodreads.com/book/show/28335696-persepolis-rising

@@ -6,9 +6,6 @@ tags:
   - "tv series"
 figureTest:
   caption: "This is a caption for the figure"
-  imageSrc: "./src/media/andy-holmes-rCbdp8VCYhQ-unsplash.jpg"
-  imageTitle: "Andy Holmes"
-  imageAlt: "The depths of space showing an immense variety of colour across millions of stars."
 ---
 
 ## Setting
@@ -17,8 +14,6 @@ We are not alone. On Ganymede, breadbasket of the outer planets, a Martian marin
 
 In the vast wilderness of space, James Holden and the crew of the Rocinante have been keeping the peace for the Outer Planets Alliance. When they agree to help a scientist search war-torn Ganymede for a missing child, the future of humanity rests on whether a single ship can prevent an alien invasion that may have already begun ...[^1]
 
-{% figure figureTest.caption %}
-  {% picture figureTest.imageSrc, figureTest.imageTitle, figureTest.imageAlt %}
-{% endfigure %}
+![The depths of space showing an immense variety of colour across millions of stars.](./src/media/andy-holmes-rCbdp8VCYhQ-unsplash.jpg "Andy Holmes")
 
 [^1]: Source: https://www.goodreads.com/book/show/12591698-caliban-s-war

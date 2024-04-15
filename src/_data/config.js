@@ -16,10 +16,6 @@ module.exports = {
 			rel: "me",
 			url: "URL-GOES-HERE",
 		},
-		{
-			rel: "pgpkey",
-			url: "URL-GOES-HERE",
-		},
 	],
 	og: {
 		locale: "en_GB",

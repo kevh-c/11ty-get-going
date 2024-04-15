@@ -6,20 +6,20 @@ icon: /icon-512.jpg
 
 <?xml version="1.0" encoding="utf-8"?>
 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ meta.domain | absoluteUrl(meta.domain) }}">
-  <title>{{ meta.projectName }}</title>
-  <id>{{ meta.domain | absoluteUrl(meta.domain) }}</id>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ config.domain | absoluteUrl(config.domain) }}">
+  <title>{{ config.projectName }}</title>
+  <id>{{ config.domain | absoluteUrl(config.domain) }}</id>
   <updated>{{ collections.feed | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-  <link rel="self" href="{{ permalink | absoluteUrl(meta.domain) }}" type="application/atom+xml"/>
-  <link rel="alternate" type="text/html" href="{{ meta.domain | absoluteUrl(meta.domain) }}"/>
+  <link rel="self" href="{{ permalink | absoluteUrl(config.domain) }}" type="application/atom+xml"/>
+  <link rel="alternate" type="text/html" href="{{ config.domain | absoluteUrl(config.domain) }}"/>
   <author>
-    <name>{{ meta.author.name }}</name>
-    <email>{{ meta.author.email }}</email>
+    <name>{{ config.author.name }}</name>
+    <email>{{ config.author.email }}</email>
   </author>
-  <icon>{{ icon | absoluteUrl(meta.domain) }}</icon>
+  <icon>{{ icon | absoluteUrl(config.domain) }}</icon>
 
   {% for item in collections.feed %}
-  {% set absolutePostUrl = item.url | absoluteUrl(meta.domain) %}
+  {% set absolutePostUrl = item.url | absoluteUrl(config.domain) %}
     <entry>
       <title>{{ item.data.title }}</title>
       {% if item.data.summary %}<summary>{{ item.data.summary }}</summary>{% endif %}

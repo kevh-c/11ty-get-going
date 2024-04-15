@@ -4,9 +4,6 @@ tags:
   - "book"
 figureTest:
   caption: "This is a caption for the figure"
-  imageSrc: "./src/media/andy-holmes-rCbdp8VCYhQ-unsplash.jpg"
-  imageTitle: "Andy Holmes"
-  imageAlt: "The depths of space showing an immense variety of colour across millions of stars."
 ---
 
 ## Setting
@@ -19,8 +16,6 @@ At the heart of the empire, Teresa Duarte prepares to take on the burden of her 
 
 And throughout the wide human empire, the scattered crew of the Rocinante fights a brave rear-guard action against Duarte's authoritarian regime. Memory of the old order falls away, and a future under Laconia's eternal rule -- and with it, a battle that humanity can only lose - seems more and more certain. Because against the terrors that lie between worlds, courage and ambition will not be enough ...[^1]
 
-{% figure figureTest.caption %}
-  {% picture figureTest.imageSrc, figureTest.imageTitle, figureTest.imageAlt %}
-{% endfigure %}
+![The depths of space showing an immense variety of colour across millions of stars.](./src/media/andy-holmes-rCbdp8VCYhQ-unsplash.jpg "Andy Holmes")
 
 [^1]: Source: https://www.goodreads.com/book/show/28335698-tiamat-s-wrath

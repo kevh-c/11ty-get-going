@@ -5,14 +5,8 @@ tags:
   - "tv series"
 figureTest:
   caption: "This is a caption for the figure"
-  imageSrc: "./src/media/jeremy-thomas-E0AHdsENmDg-unsplash.jpg"
-  imageTitle: "Space by Jeremy Thomas"
-  imageAlt: "The depths of space showing an immense variety of colour across millions of stars."
-  loading: "eager"
 ---
-{% figure figureTest.caption %}
-  {% picture figureTest.imageSrc, figureTest.imageTitle, figureTest.imageAlt, figureTest.loading %}
-{% endfigure %}
+![The depths of space showing an immense variety of colour across millions of stars.](./src/media/jeremy-thomas-E0AHdsENmDg-unsplash.jpg "Space by Jeremy Thomas")
 
 ## Setting
 

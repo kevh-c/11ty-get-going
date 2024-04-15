@@ -5,11 +5,11 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntax = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-const markdown = require("./src/_11ty/libraries/markdown-it");
-const collections = require("./src/_11ty/collections");
-const filters = require("./src/_11ty/filters");
-const shortcodes = require("./src/_11ty/shortcodes");
-const transforms = require("./src/_11ty/transforms");
+const markdown = require("./lib/markdown-it");
+const collections = require("./etc/collections/allCollections");
+const filters = require("./etc/filters/allFilters");
+const shortcodes = require("./etc/shortcodes/allShortcodes");
+const transforms = require("./etc/transforms/allTransforms");
 
 module.exports = function (eleventyConfig) {
 	// Plugins
@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
 		dir: {
 			input: "src",
 			output: "dist",
-			data: "_11ty/data",
+			data: "_data",
 		},
 		templateFormats: ["html", "md", "njk", "11ty.js"],
 		markdownTemplateEngine: "njk",

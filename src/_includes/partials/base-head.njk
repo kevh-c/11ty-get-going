@@ -1,12 +1,12 @@
 {# - Head order thanks to https://github.com/rviscomi/capo.js #}
 
 {# Page title format #}
-{% set pageTitle = title + ': ' + meta.projectName %}
+{% set pageTitle = title + ': ' + config.projectName %}
 {# Remove any title duplication #}
-{% if title === meta.projectName %} {% set pageTitle = title %} {% endif %}
+{% if title === config.projectName %} {% set pageTitle = title %} {% endif %}
 
 {# URL formats #}
-{% set thisUrl = meta.domain + page.url %}
+{% set thisUrl = config.domain + page.url %}
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,36 +17,36 @@
 
 {# ------------ Prefetches? Place here ------------ #}
 
-<meta name="description" content="{{ meta.description }}">
-<meta property="og:description" content="{{ meta.description }}">
+<meta name="description" content="{{ config.description }}">
+<meta property="og:description" content="{{ config.description }}">
 
 <link rel="canonical" href="{{ thisUrl }}">
 
-{% if meta.og %}
+{% if config.og %}
   <meta property="og:url" content="{{ thisUrl }}">
-  <meta property="og:site_name" content="{{ meta.projectName }}">
+  <meta property="og:site_name" content="{{ config.projectName }}">
   <meta property="og:title" content="{{ pageTitle }}">
-  {% if meta.og.locale %}
-    <meta property="og:locale" content="{{ meta.og.locale }}">
+  {% if config.og.locale %}
+    <meta property="og:locale" content="{{ config.og.locale }}">
   {% endif %}
-  {% if meta.og.type %}
-    <meta property="og:type" content="{{ meta.og.type }}">
+  {% if config.og.type %}
+    <meta property="og:type" content="{{ config.og.type }}">
   {% endif %}
-  {% if meta.og.image %}
-    <meta property="og:image" content="{{ meta.og.image.rel }}">
-    <meta property="og:image:alt" content="{{ meta.og.image.alt }}">
+  {% if config.og.image %}
+    <meta property="og:image" content="{{ config.og.image.rel }}">
+    <meta property="og:image:alt" content="{{ config.og.image.alt }}">
   {% endif %}
 {% endif %}
 
 <meta name="generator" content="{{ eleventy.generator }}">
 
-<meta name="robots" content="{{ meta.robots }}">
+<meta name="robots" content="{{ config.robots }}">
 
-<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ meta.projectName }}">
+<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ config.projectName }}">
 
 {# Identity loop #}
-{% if meta.identity %}
-  {% for item in meta.identity %}
+{% if config.identity %}
+  {% for item in config.identity %}
     <link rel="{{ item.rel }}" href="{{ item.url }}">
   {% endfor %}
 {% endif %}
