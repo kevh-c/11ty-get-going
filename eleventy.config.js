@@ -8,7 +8,6 @@ const pluginSyntax = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdown = require("./lib/markdown-it");
 const collections = require("./etc/collections/allCollections");
 const filters = require("./etc/filters/allFilters");
-const shortcodes = require("./etc/shortcodes/allShortcodes");
 const transforms = require("./etc/transforms/allTransforms");
 
 module.exports = function (eleventyConfig) {
@@ -31,10 +30,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter("dateToYear", filters.dateToYear);
 	eleventyConfig.addFilter("dateToMonth", filters.dateToMonth);
 	eleventyConfig.addFilter("dateToUNIX", filters.dateToUNIX);
-
-	// Shortcodes
-	eleventyConfig.addShortcode("picture", shortcodes.picture);
-	eleventyConfig.addPairedShortcode("figure", shortcodes.figure);
 
 	// Transforms
 	eleventyConfig.addTransform("htmlmin", transforms.htmlmin);

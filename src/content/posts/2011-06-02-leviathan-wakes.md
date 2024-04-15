@@ -3,8 +3,6 @@ title: "Leviathan Wakes"
 tags:
   - "book"
   - "tv series"
-figureTest:
-  caption: "This is a caption for the figure"
 ---
 ![The depths of space showing an immense variety of colour across millions of stars.](./src/media/jeremy-thomas-E0AHdsENmDg-unsplash.jpg "Space by Jeremy Thomas")
 
