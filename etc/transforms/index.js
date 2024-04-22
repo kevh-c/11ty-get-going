@@ -1,6 +1,6 @@
 import { minify } from "html-minifier";
 
-export const htmlmin = content => {
+export const htmlmin = function (content) {
 	if ((this.page.outputPath || "").endsWith(".html")) {
 		let minified = minify(content, {
 			minifyJS: true,
