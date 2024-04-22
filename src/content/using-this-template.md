@@ -10,10 +10,8 @@ permalink: "/using-this-template/index.html"
 
 There's a little bit of housekeeping to do in order to make this template your own.
 
-## Update template metadata
-Eleventy uses [global data files](https://www.11ty.dev/docs/data-global/) to conveniently expose data to every template in an Eleventy project. In this template global data files can be found under `src/_11ty/data`. 
-
-This template uses `config.js` to pull in useful default global values. These of course can be overridden in your content frontmatter thanks to Eleventys [data cascade](https://www.11ty.dev/docs/data-cascade/).
+### Update global configs for this template
+This project uses a single file to capture project-wide metadata, basically to populate all the stuff in a `<head>` tag on your pages. This can be found under `src/data/config.js`. These of course can be overridden in your content frontmatter thanks to Eleventys [data cascade](https://www.11ty.dev/docs/data-cascade/).
 
 ```js
 // Required. The name of your project.
@@ -49,10 +47,6 @@ identity: [
 		rel: "me",
 		url: "URL-GOES-HERE",
 	},
-	{
-		rel: "pgpkey",
-		url: "URL-GOES-HERE",
-	},
 ],
 
 // Optional. Delete block if you don't require Opengraph.
@@ -66,50 +60,55 @@ og: {
 }
 ```
 
-## Favicons and Opengraph
+### Favicons and Opengraph
 
-### Favicons
+#### Favicons
 Favicons are stored under `src/static/favicons` and are automatically passed through to their relevant directories on build. All you need to do is create the images for your project.
 
-### Opengraph
+#### Opengraph
 A default Opengraph image can be found under `src/static` and is named `og-default.jpg`. Much like the favicons all you need to do is create a relevant default image to be used. 
 
-You can of course delete this file if you don't require Opengraph in your project. Please also update `eleventy.config.js` and remove this line: 
+If you decide to delete this file (for example if you don't require Opengraph in your project), then you must update `eleventy.config.js` and remove this line: 
 
 ```js
 eleventyConfig.addPassthroughCopy({ "src/static/og-default.jpg": "/og-default.jpg" });
 ```
 
-## RSS logic
-By default this template collects all posts under `src/content/posts` to populate the RSS feed. You would most likely want something different for your project. If you visit `src/_11ty/collections.js` and edit the following to fit your needs: 
+### RSS logic
+By default this template collects all posts under `src/content/posts` to populate the RSS feed. You would most likely want something different for your project. If you visit `etc/collections/index.js` and edit the following to fit your needs: 
 
 ```js
-const feed = i => i.getFilteredByGlob("./src/content/posts/*.md").reverse();
+export const feed = i => i.getFilteredByGlob("./src/content/posts/*.md").reverse();
 ```
 
-## Responsive images
-This template uses [Eleventy Image](https://www.11ty.dev/docs/plugins/image/) to generate responsive images and handles this all in `src/_11ty/shortcodes.js`. You will want to adapt widths, sizes and formats to suit your projects needs:
+### Responsive images
+Images are stored in their original format under `src/media`, although you can organise images in any way in this project.
+
+This project adheres to Markdown syntax as much as possible and uses [Markdown-it-eleventy-img](https://www.npmjs.com/package/markdown-it-eleventy-img) in order to leverage the magic of [Eleventy Image](https://www.11ty.dev/docs/plugins/image/) to generate responsive images based on your needs (so you can do something like this `![The depths of space showing an immense variety of colour across millions of stars.](./src/media/jeremy-thomas-E0AHdsENmDg-unsplash.jpg "Space by Jeremy Thomas")` and get all the responsive benefits without much effort). 
+
+For images imported using Markdown syntax, this project wraps images in a `<figure>` by default and a `<figcaption>` is rendered if a `title` attribute is applied to your image (e.g. `![Alt text](..link/to/image.jpg "Title text")`).
+
+Finally, if a gif is imported it is assumed this is animated, so relevant logic is set to make that possible.
+
+You will most likely want to adapt widths, sizes and formats to suit your projects needs. You will want to edit the Markdown-it library located in `lib/markdown.js` and find these object keys:
 
 ```js
-const picture = async function (src, title, alt, loading = "lazy") {
-	const metadata = await Image(src, {
-		widths: [300, 600, 1200, 1800, 2150], // Edit relevant widths to export
-		formats: ["avif", "jpeg"], // Edit relevant formats to export
+const eleventyImageOptions = {
+	imgOptions: {
+		widths: [300, 600, 1200, 1800, 2150],
 		urlPath: "/img/",
 		outputDir: "./dist/img/",
-	});
-
-	const imageAttributes = {
-		title,
-		alt,
-		sizes: "(max-width: 72rem) 100vw, 75vw", // Edit relevant sizes based on your responsive layout
-		loading,
-	};
-
-	return Image.generateHTML(metadata, imageAttributes);
-};
+		formats: ["avif", "jpeg"],
+	},
+	globalAttributes: {
+		decoding: "async",
+		loading: "lazy",
+		sizes: "(max-width: 72rem) 100vw, 75vw",
+	},
+...
+..
+.
 ```
-You can of course use this markup to create a new shortcode for other use cases. Be sure to import this in `eleventy.config.js` though.
 
 ---
 
