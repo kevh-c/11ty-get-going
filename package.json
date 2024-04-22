@@ -2,7 +2,18 @@
 	"name": "11ty-get-going",
 	"version": "1.0.0",
 	"description": "Just another 11ty starter kit.",
-	"main": "eleventy.config.js",
+	"keywords": [
+		"eleventy",
+		"eleventy template",
+		"starter"
+	],
+	"author": {
+		"name": "Kevin Healy-Clarke"
+	},
+	"engines": {
+		"node": "^20.0.0"
+	},
+	"type": "module",
 	"scripts": {
 		"clean": "rm -rf dist",
 		"build:files": "npx @11ty/eleventy",
@@ -12,14 +23,8 @@
 		"serve:styles": "postcss src/site.css --dir dist/styles/ --watch --config postcss.config.js",
 		"serve": "run-p serve:*"
 	},
-	"keywords": [
-		"eleventy",
-		"eleventy template",
-		"starter"
-	],
-	"author": "Kevin Healy-Clarke",
 	"dependencies": {
-		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy": "3.0.0-alpha.6",
 		"@11ty/eleventy-img": "^3.1.0",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
@@ -29,6 +34,7 @@
 		"markdown-it": "^13.0.1",
 		"markdown-it-attrs": "^4.1.6",
 		"markdown-it-deflist": "^2.1.0",
+		"markdown-it-eleventy-img": "^0.10.2",
 		"markdown-it-footnote": "^3.0.3",
 		"markdown-it-sub": "^1.0.0",
 		"markdown-it-sup": "^1.0.0",

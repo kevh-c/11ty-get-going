@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	projectName: "11ty Get Going",
 	description: "Just another 11ty starter kit",
 	shortName: "11ty GG",

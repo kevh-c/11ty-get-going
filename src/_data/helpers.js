@@ -1,5 +1,5 @@
 const dateNow = new Date();
 
-module.exports = {
+export default {
 	dateNow,
 };

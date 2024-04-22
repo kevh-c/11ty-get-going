@@ -1,23 +1,23 @@
 // Enable type definitions: https://www.11ty.dev/docs/config/#type-definitions
 /** @param {import("@11ty/eleventy/src/UserConfig")} eleventyConfig */
 
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntax = require("@11ty/eleventy-plugin-syntaxhighlight");
+import pluginNavigation from "@11ty/eleventy-navigation";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginSyntax from "@11ty/eleventy-plugin-syntaxhighlight";
 
-const markdown = require("./lib/markdown-it");
-const collections = require("./etc/collections/allCollections");
-const filters = require("./etc/filters/allFilters");
-const transforms = require("./etc/transforms/allTransforms");
+import { markdownParser } from "./lib/markdown.js";
+import * as collections from "./etc/collections/collections.js";
+import * as filters from "./etc/filters/filters.js";
+// import { htmlmin } from "./etc/transforms/index.js";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// Plugins
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntax);
 
 	// Libraries
-	eleventyConfig.setLibrary("md", markdown.md);
+	eleventyConfig.setLibrary("md", markdownParser());
 
 	// Collections
 	eleventyConfig.addCollection("posts", collections.posts);
@@ -31,9 +31,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter("dateToMonth", filters.dateToMonth);
 	eleventyConfig.addFilter("dateToUNIX", filters.dateToUNIX);
 
-	// Transforms
-	eleventyConfig.addTransform("htmlmin", transforms.htmlmin);
-
 	// Passthrough copies
 	eleventyConfig.addPassthroughCopy({ "src/static/fonts": "/fonts" });
 	eleventyConfig.addPassthroughCopy({ "src/static/favicons/*": "/" });
@@ -43,6 +40,9 @@ module.exports = function (eleventyConfig) {
 
 	// Watch targets
 	eleventyConfig.addWatchTarget("./src/_styles/**/*.css");
+
+	// Transforms
+	// eleventyConfig.addTransform("htmlmin", htmlmin);
 
 	return {
 		dir: {
@@ -54,4 +54,4 @@ module.exports = function (eleventyConfig) {
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
 	};
-};
+}
