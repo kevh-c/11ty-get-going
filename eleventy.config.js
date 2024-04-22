@@ -6,9 +6,9 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntax from "@11ty/eleventy-plugin-syntaxhighlight";
 
 import { markdownParser } from "./lib/markdown.js";
-import * as collections from "./etc/collections/collections.js";
-import * as filters from "./etc/filters/filters.js";
-// import { htmlmin } from "./etc/transforms/index.js";
+import * as collections from "./etc/collections/index.js";
+import * as filters from "./etc/filters/index.js";
+import { htmlmin } from "./etc/transforms/index.js";
 
 export default function (eleventyConfig) {
 	// Plugins
@@ -42,7 +42,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addWatchTarget("./src/_styles/**/*.css");
 
 	// Transforms
-	// eleventyConfig.addTransform("htmlmin", htmlmin);
+	eleventyConfig.addTransform("htmlmin", htmlmin);
 
 	return {
 		dir: {
