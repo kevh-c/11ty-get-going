@@ -2,7 +2,9 @@
 	display: grid;
 	grid-template-columns: auto;
 	column-gap: var(--space-xs-s);
-	@extend %list-reset;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .card-list ul li {

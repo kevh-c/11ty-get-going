@@ -1,5 +1,8 @@
-/* https://css-tricks.com/inclusively-hidden/ */
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}
 
+/* https://css-tricks.com/inclusively-hidden/ */
 .visually-hidden:not(:focus) {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);

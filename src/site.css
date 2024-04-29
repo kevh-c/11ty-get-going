@@ -1,38 +1,27 @@
 /* Configuration */
-@import "./_styles/config/extends.css";
-@import "./_styles/config/media.css";
-@import "./_styles/config/import.css";
+@import url("./_styles/_config/_media.css");
+@import url("./_styles/_config/_import.css");
 
-/* CSS variables */
-@import "./_styles/variables/all.css";
+/* Variables */
+@import url("./_styles/_variables.css");
 
 /* Utilities */
-@import "./_styles/utilities/flow.css";
-@import "./_styles/utilities/visually-hidden.css";
-@import "./_styles/utilities/wrapper.css";
+@import url("./_styles/_utilities.css");
 
-/* Base */
-@import "./_styles/base/catch-all.css";
-@import "./_styles/base/root.css";
-@import "./_styles/base/sections.css";
-@import "./_styles/base/grouping-content.css";
-@import "./_styles/base/text-level-semantics.css";
-@import "./_styles/base/embedded-content.css";
-@import "./_styles/base/forms.css";
-@import "./_styles/base/tables.css";
-@import "./_styles/base/interactive-elements.css";
-@import "./_styles/base/edits.css";
+/* Types and universal selectors */
+@import url("./_styles/_types.css");
 
 /* Layout */
-@import "./_styles/layout/layout-grid.css";
-@import "./_styles/layout/content.css";
+@import url("./_styles/_layout/_layout-grid.css");
+@import url("./_styles/_layout/_content.css");
+@import url("./_styles/_layout/_wrapper.css");
 
 /* Components */
-@import "./_styles/components/site-header.css";
-@import "./_styles/components/site-footer.css";
-@import "./_styles/components/site-pagination.css";
-@import "./_styles/components/card-list.css";
-@import "./_styles/components/footnotes.css";
+@import url("./_styles/_components/_site-header.css");
+@import url("./_styles/_components/_site-footer.css");
+@import url("./_styles/_components/_site-pagination.css");
+@import url("./_styles/_components/_card-list.css");
+@import url("./_styles/_components/_footnotes.css");
 
 /* Vendor */
-@import "./_styles/vendor/prism.css";
+@import url("./_styles/_vendor/_prism.css");

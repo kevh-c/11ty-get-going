@@ -1,0 +1,240 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+*::selection {
+	background-color: var(--color-highlight);
+}
+
+/* Ref: https://andy-bell.co.uk/a-modern-css-reset/ */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	font-feature-settings: normal;
+	font-variant-ligatures: common-ligatures;
+	text-rendering: optimizeSpeed;
+	font-variation-settings: "slnt" 0; /* Variable font Safari fix */
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Edits: ins, del */
+
+/* Embedded content: img, iframe, embed, object, param, video, audio, source, track, canvas, map, area */
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Forms: form, fieldset, legend, label, input, button, select, datalist, optgroup, option, textarea, keygen, output, progress, meter */
+
+input,
+button,
+optgroup,
+textarea,
+select {
+	font-family: inherit;
+	margin: 0;
+}
+
+/* Grouping content: p, hr, br, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div */
+
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+pre,
+hr {
+	margin: 0;
+}
+
+ul,
+ol {
+	list-style-position: outside;
+}
+
+ul {
+	margin-inline-start: -1.5em;
+}
+
+ol {
+	margin-inline-start: -0.5em;
+}
+
+p,
+li,
+figcaption {
+	font-family: var(--font-family-sans);
+	font-weight: 400;
+	color: var(--color-text-default);
+	font-size: var(--step-0);
+	line-height: var(--leading-default);
+}
+
+li {
+	margin-block-start: 0.5em;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+figure:has(figcaption) {
+	border-bottom: 1px solid var(--color-border-default);
+}
+
+figcaption {
+	padding: var(--space-xs-s) 0;
+	max-width: var(--measure-default);
+}
+
+p,
+li {
+	max-width: var(--measure-default);
+}
+
+hr {
+	border: none;
+	background-color: var(--color-border-default);
+	height: 1px;
+}
+
+/* Interactive elements: details, summary, command, menu */
+
+/* Sections: body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address */
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background: var(--color-surface-default);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup {
+	max-width: var(--measure-tight);
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-family-sans);
+	color: var(--color-text-default);
+}
+
+h1 {
+	font-weight: 900;
+	font-size: var(--step-4);
+	line-height: var(--leading-tight);
+}
+
+h2 {
+	font-weight: 800;
+	font-size: var(--step-2);
+	line-height: var(--leading-tight);
+}
+
+h3 {
+	font-weight: 600;
+	font-size: var(--step-1);
+	line-height: var(--leading-default);
+}
+
+h4,
+h5,
+h6 {
+	font-weight: 600;
+	font-size: var(--step-1);
+	line-height: var(--leading-default);
+}
+
+/* Tables: table, caption, colgroup, col, tbody, thead, tfoot, tr, td, th */
+
+table,
+fieldset {
+	margin: 0;
+}
+
+/* Text-level semantics: a, em, strong, small, s, cite, q, dfn, abbr, time, code, var, samp, kbd, sub, sup, i, b, u, mark, ruby, rt, rp, bdi, bdo, span */
+
+a {
+	font-weight: 500;
+	color: var(--color-interactive-default);
+}
+
+a:hover {
+	color: var(--color-interactive-hover);
+}
+
+a:active {
+	color: var(--color-interactive-default);
+}
+a:focus {
+	outline: 1px solid var(--color-interactive-focus-ring);
+	outline-offset: 2px;
+}
+
+a:focus-visible {
+	outline: 2px solid var(--color-interactive-focus-ring);
+	outline-offset: 2px;
+}
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	text-decoration-line: underline;
+	text-decoration-color: var(--color-interactive-default);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+}
+
+code {
+	font-family: var(--font-family-code);
+	font-size: 95%;
+	color: var(--color-text-code-default);
+}
+
+b,
+strong {
+	font-weight: 800;
+	color: var(--color-grey-80);
+}
+
+sub {
+	line-height: 0;
+	vertical-align: -0.35em;
+}
+
+sup {
+	line-height: 0;
+	vertical-align: 0.35em;
+}

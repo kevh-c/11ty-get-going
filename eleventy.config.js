@@ -4,6 +4,7 @@
 import pluginNavigation from "@11ty/eleventy-navigation";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntax from "@11ty/eleventy-plugin-syntaxhighlight";
+import lightningcss from "@11tyrocks/eleventy-plugin-lightningcss";
 
 import { markdownParser } from "./lib/markdown.js";
 import * as collections from "./etc/collections/index.js";
@@ -15,6 +16,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntax);
+	eleventyConfig.addPlugin(lightningcss);
 
 	// Libraries
 	eleventyConfig.setLibrary("md", markdownParser());
@@ -50,7 +52,7 @@ export default function (eleventyConfig) {
 			output: "dist",
 			data: "_data",
 		},
-		templateFormats: ["html", "md", "njk", "11ty.js"],
+		templateFormats: ["css", "html", "md", "njk", "11ty.js"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
 	};
