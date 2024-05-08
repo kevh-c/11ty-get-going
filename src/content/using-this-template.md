@@ -8,10 +8,10 @@ title: "Using Get Going"
 permalink: "/using-this-template/index.html"
 ---
 
-There's a little bit of housekeeping to do in order to make this template your own.
+There's a little bit of housekeeping to do in order to make this template your own:
 
-### Update global configs for this template
-This project uses a single file to capture project-wide metadata, basically to populate all the stuff in a `<head>` tag on your pages. This can be found under `src/data/config.js`. These of course can be overridden in your content frontmatter thanks to Eleventys [data cascade](https://www.11ty.dev/docs/data-cascade/).
+## Global configuration
+This template captures global metadata in `src/_data/config.js`. This basically populates all the stuff you might find in a `<head>` tag. These of course can be overridden for specific pages in your content frontmatter.
 
 ```js
 // Required. The name of your project.
@@ -60,26 +60,33 @@ og: {
 }
 ```
 
+## Optional things
+
+### Git LFS
+This template comes with a handy `.gitattributes` file and tracks the following file formats for [Git Large File Storage](https://git-lfs.com/):
+
+- `*.jpg`
+- `*.png`
+- `*.gif`
+- `*.mp4`
+- `*.webm`
+- `*.woff`
+- `*.woff2`
+
+If you want to fine-tune your own gitattributes file I highly recommend checking out this [gitattributes template repo](https://github.com/gitattributes/gitattributes) and make your own.
+
+To enable Git LFS for your project simply run `git lfs install` and follow any instructions from there.
+
 ### Favicons and Opengraph
 
 #### Favicons
 Favicons are stored under `src/static/favicons` and are automatically passed through to their relevant directories on build. All you need to do is create the images for your project.
 
 #### Opengraph
-A default Opengraph image can be found under `src/static` and is named `og-default.jpg`. Much like the favicons all you need to do is create a relevant default image to be used. 
+A default Opengraph image can be found under `src/static` and is named `og-default.jpg`. Much like the favicons all you need to do is create a relevant default image to be used.
 
-If you decide to delete this file (for example if you don't require Opengraph in your project), then you must update `eleventy.config.js` and remove this line: 
-
-```js
-eleventyConfig.addPassthroughCopy({ "src/static/og-default.jpg": "/og-default.jpg" });
-```
-
-### RSS logic
-By default this template collects all posts under `src/content/posts` to populate the RSS feed. You would most likely want something different for your project. If you visit `etc/collections/index.js` and edit the following to fit your needs: 
-
-```js
-export const feed = i => i.getFilteredByGlob("./src/content/posts/*.md").reverse();
-```
+### RSS
+By default this template collects all posts under `src/content/posts` to populate the RSS feed. You may want something different for your project in which case, edit `etc/collections/index.js` and the exported `feed` constant to fit your needs.
 
 ### Responsive images
 Images are stored in their original format under `src/media`, although you can organise images in any way in this project.
